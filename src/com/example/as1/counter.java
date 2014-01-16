@@ -1,19 +1,18 @@
 package com.example.as1;
 import java.util.*;
-import java.
 
 public class counter {
 	
 	private String name;
 	private int count;
-	private Arraylist<Date> time;
+	private ArrayList<Date> time;
 	
 	//Constructor method
 	public counter(String counter_name)
 	{
 		this.name = counter_name;
 		this.count = 0;
-		this.time = new Date[]();
+		this.time = new ArrayList<Date>();
 	}
 	
 	public String getName()
@@ -26,7 +25,7 @@ public class counter {
 		return count;
 	}
 	
-	public Date[] getDate()
+	public ArrayList<Date> getDate()
 	{
 		return time;
 	}
@@ -44,7 +43,7 @@ public class counter {
 	public void reset_counter()
 	{
 		this.count = 0;
-		this.time = new
+		this.time = new ArrayList<Date>();
 	}
 
 }
