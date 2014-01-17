@@ -8,42 +8,36 @@ public class Counter {
 	private ArrayList<Date> time;
 	
 	//Constructor method
-	public Counter(String counter_name)
+	public Counter()
 	{
-		this.name = counter_name;
+		this.name = "Counter Name";
 		this.count = 0;
 		this.time = new ArrayList<Date>();
 	}
-	
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
-	
-	public int getCount()
-	{
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getCount() {
 		return count;
 	}
-	
-	public ArrayList<Date> getDate()
-	{
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public ArrayList<Date> getTime() {
 		return time;
 	}
-	
-	public void increase()
-	{
-		count++;
+
+	public void setTime(ArrayList<Date> time) {
+		this.time = time;
 	}
 	
-	public void change_name(String new_name)
-	{
-		this.name = new_name;
-	}
-	
-	public void reset_counter()
-	{
-		this.count = 0;
-		this.time = new ArrayList<Date>();
-	}
 
 }
