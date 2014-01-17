@@ -3,7 +3,7 @@ package es.softwareprocess.as1;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import com.example.as1.R;
+import es.softwareprocess.as1.R;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
