@@ -1,4 +1,4 @@
-package com.example.as1;
+package es.softwareprocess.as1;
 
 import java.util.ArrayList;
 

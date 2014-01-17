@@ -1,14 +1,14 @@
-package com.example.as1;
+package es.softwareprocess.as1;
 import java.util.*;
 
-public class counter {
+public class Counter {
 	
 	private String name;
 	private int count;
 	private ArrayList<Date> time;
 	
 	//Constructor method
-	public counter(String counter_name)
+	public Counter(String counter_name)
 	{
 		this.name = counter_name;
 		this.count = 0;

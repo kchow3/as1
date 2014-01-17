@@ -1,7 +1,9 @@
-package com.example.as1;
+package es.softwareprocess.as1;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import com.example.as1.R;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
@@ -110,7 +112,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     private void add_counter()
     {
     	//need to get user input for name
-    	counter new_counter = new counter();
+    	Counter new_counter = new Counter();
     }
 
 
