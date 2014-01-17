@@ -15,6 +15,7 @@ public class Counter {
 		this.time = new ArrayList<Date>();
 	}
 
+	//Getters and Setters
 	public String getName() {
 		return name;
 	}
