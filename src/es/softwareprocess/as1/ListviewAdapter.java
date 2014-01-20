@@ -40,6 +40,12 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 		Button resetButton = (Button) rowView.findViewById(R.id.resetButton);
 		Button deleteButton = (Button) rowView.findViewById(R.id.deleteButton);
 		
+		//set text for textview
+		nameView.setText(countersArrayList.get(position).getName());
+		countView.setText(Integer.toString(countersArrayList.get(position).getCount()));
+		//TODO create onclick listners for button clicks
+		
+		return rowView;
 	}
 	
 }
