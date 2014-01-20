@@ -6,54 +6,54 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/deleteButton"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button2"
-        android:layout_toRightOf="@+id/button2"
+        android:layout_alignTop="@+id/resetButton"
+        android:layout_toRightOf="@+id/resetButton"
         android:minHeight="35dp"
         android:text="Delete" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/incrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
+        android:layout_alignBottom="@+id/deleteButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="+" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/nameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button3"
+        android:layout_alignRight="@+id/deleteButton"
         android:editable="true"
         android:maxHeight="50dp"
         android:text="Name"
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/resetButton"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/nameView"
         android:minHeight="35dp"
         android:text="Reset" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/countView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
+        android:layout_alignBottom="@+id/deleteButton"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/button1"
-        android:layout_toRightOf="@+id/button3"
+        android:layout_toLeftOf="@+id/incrementButton"
+        android:layout_toRightOf="@+id/deleteButton"
         android:gravity="center"
         android:text="Count"
         android:textAppearance="?android:attr/textAppearanceLarge"

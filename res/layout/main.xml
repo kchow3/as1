@@ -10,14 +10,14 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/countersButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.34"
             android:text="Counters" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/statsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.51"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/countersView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.10"
@@ -42,15 +42,16 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="+" 
-            android:onClick="add_counter"/>
+            android:onClick="add_counter"
+            android:text="+" />
+
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/counterListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
