@@ -13,8 +13,7 @@
         android:layout_alignTop="@+id/resetButton"
         android:layout_toRightOf="@+id/resetButton"
         android:minHeight="35dp"
-        android:text="Delete" 
-        android:onClick="deleteClick"/>
+        android:text="Delete"/>
 
     <Button
         android:id="@+id/incrementButton"
@@ -23,8 +22,7 @@
         android:layout_alignBottom="@+id/deleteButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="+" 
-        android:onClick="incrementClick"/>
+        android:text="+"/>
 
     <TextView
         android:id="@+id/nameView"
@@ -46,8 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/nameView"
         android:minHeight="35dp"
-        android:text="Reset" 
-        android:onClick="resetClick"/>
+        android:text="Reset" />
 
     <TextView
         android:id="@+id/countView"

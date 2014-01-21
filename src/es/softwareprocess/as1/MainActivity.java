@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.view.Menu;
 import android.app.Activity;
-import android.app.ListActivity;
 import android.widget.ListView;
 
 
