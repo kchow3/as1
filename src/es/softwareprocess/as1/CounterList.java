@@ -18,5 +18,10 @@ public class CounterList {
 	public static void setCounterList(ArrayList<Counter> counterList) {
 		CounterList.counterList = counterList;
 	}
+	
+	public static int size()
+	{
+		return counterList.size();
+	}
 
 }

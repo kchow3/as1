@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.app.Activity;
+import android.widget.Button;
 import android.widget.ListView;
 
 
@@ -26,8 +29,21 @@ public class MainActivity extends Activity{
         
         //setup adapter
         listview.setAdapter(adapter);
+        
+        Button addButton = (Button) findViewById(R.id.addButton);
+        addButton.setOnClickListener(addBtnClick);
       
     }
+    
+    private OnClickListener addBtnClick = new OnClickListener() 
+	{
+	    public void onClick(View v)
+	    {
+	    	Counter aCounter = new Counter();
+	    	CounterController cntrl = new CounterController();
+	    	cntrl.addCounter(aCounter);
+	    }
+	};
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
