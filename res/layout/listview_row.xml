@@ -24,17 +24,18 @@
         android:layout_alignParentTop="true"
         android:text="+"/>
 
-    <TextView
+    <EditText
         android:id="@+id/nameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/deleteButton"
-        android:editable="true"
         android:maxHeight="50dp"
         android:text="Name"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:background="@android:color/transparent">
+        </EditText>
 
     <Button
         android:id="@+id/resetButton"

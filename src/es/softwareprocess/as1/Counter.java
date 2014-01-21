@@ -10,7 +10,7 @@ public class Counter {
 	//Constructor method
 	public Counter()
 	{
-		this.name = "Counter Name";
+		this.name = "Name";
 		this.count = 0;
 		this.time = new ArrayList<Date>();
 	}

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -27,7 +28,8 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	 
 	private static class ViewHolder 
 	{
-         TextView nameView, countView;
+         TextView countView;
+         EditText nameView;
          Button incrementButton, resetButton, deleteButton;
     }
 	
@@ -44,15 +46,17 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 		rowView = inflater.inflate(R.layout.listview_row, parent, false);
 		
 		//get name, counter and buttons views from the rowView
-		holder.nameView = (TextView) rowView.findViewById(R.id.nameView);
+		holder.nameView = (EditText) rowView.findViewById(R.id.nameView);
 		holder.countView = (TextView) rowView.findViewById(R.id.countView);
 		holder.incrementButton = (Button) rowView.findViewById(R.id.incrementButton);
 		holder.resetButton = (Button) rowView.findViewById(R.id.resetButton);
 		holder.deleteButton = (Button) rowView.findViewById(R.id.deleteButton);
 		
 		//set text for textview
-		holder.nameView.setText(countersArrayList.get(position).getName());
 		holder.countView.setText(Integer.toString(countersArrayList.get(position).getCount()));
+		
+		//set text for edit text
+		holder.nameView.setText(countersArrayList.get(position).getName());
 		
 		//set onclick listners for buttons
 		holder.incrementButton.setOnClickListener(incrementBtnClick);
