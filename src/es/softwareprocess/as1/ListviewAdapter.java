@@ -67,16 +67,14 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 		return rowView;
 	}
 	
-	@Override
-    public Counter getItem(int position) {
-        // TODO Auto-generated method stub
-        return countersArrayList.get(position);
-    }
-	
 	private OnClickListener incrementBtnClick = new OnClickListener() 
 	{
 	    public void onClick(View v)
 	    {
+	    	int i = (Integer) v.getTag();
+	    	CounterController cntrl = new CounterController();
+	    	Counter aCounter = countersArrayList.get(i);
+	    	cntrl.incrementCount(aCounter);
 	    	
 	    }
 	};
@@ -85,7 +83,10 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	{
 	    public void onClick(View v)
 	    {
-	    	
+	    	int i = (Integer) v.getTag();
+	    	CounterController cntrl = new CounterController();
+	    	Counter aCounter = countersArrayList.get(i);
+	    	cntrl.resetCount(aCounter);
 	    }
 	};
 	
@@ -93,7 +94,10 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	{
 	    public void onClick(View v)
 	    {
-	    	
+	    	int i = (Integer) v.getTag();
+	    	CounterController cntrl = new CounterController();
+	    	Counter aCounter = countersArrayList.get(i);
+	    	cntrl.deleteCounter(aCounter);
 	    }
 	};
 	
