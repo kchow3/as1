@@ -53,10 +53,16 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 		//set text for textview
 		holder.nameView.setText(countersArrayList.get(position).getName());
 		holder.countView.setText(Integer.toString(countersArrayList.get(position).getCount()));
-		//TODO create onclick listners for button clicks
 		
+		//set onclick listners for buttons
 		holder.incrementButton.setOnClickListener(incrementBtnClick);
         holder.incrementButton.setTag(position);
+        holder.resetButton.setOnClickListener(resetBtnClick);
+        holder.resetButton.setTag(position);
+        holder.deleteButton.setOnClickListener(deleteBtnClick);
+        holder.deleteButton.setTag(position);
+        
+        rowView.setTag(holder);
 		
 		return rowView;
 	}
@@ -75,14 +81,20 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    }
 	};
     
-    public void deleteClick(View v)
-    {
-    	
-    }
-    
-    public void resetClick(View v)
-    {
-    	
-    }
+	private OnClickListener resetBtnClick = new OnClickListener() 
+	{
+	    public void onClick(View v)
+	    {
+	    	
+	    }
+	};
+	
+	private OnClickListener deleteBtnClick = new OnClickListener() 
+	{
+	    public void onClick(View v)
+	    {
+	    	
+	    }
+	};
 	
 }
