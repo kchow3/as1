@@ -40,5 +40,9 @@ public class Counter {
 		this.time = time;
 	}
 	
+	public void increaseCount()
+	{
+		this.count++;
+	}
 
 }

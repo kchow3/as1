@@ -27,4 +27,13 @@ public class CounterController implements CounterControllerInterface {
 		oldCounter.setName(name);
 	}
 
+	public void incrementCount(Counter aCounter) {
+		aCounter.increaseCount();
+		
+	}
+
+	public void resetCount(Counter aCounter) {
+		aCounter.setCount(0);
+	}
+
 }
