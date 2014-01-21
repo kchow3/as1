@@ -1,37 +1,32 @@
 package es.softwareprocess.as1;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-import es.softwareprocess.as1.R;
-
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
-import android.content.ClipData.Item;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
-import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.app.Activity;
+import android.app.ListActivity;
 import android.widget.ListView;
+
 
 public class MainActivity extends Activity{
 	
+	ArrayList<Counter> countersArrayList;
+	
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle icicle) {
     	
-        super.onCreate(savedInstanceState);
+        super.onCreate(icicle);
         setContentView(R.layout.activity_main);
+        countersArrayList = new ArrayList<Counter>();
+        //need to implement save/resume data
+        
+        //setup listview
+        ListviewAdapter adapter = new ListviewAdapter(this, countersArrayList);
+        ListView listview = (ListView) findViewById(R.id.counterListView);
+        
+        //setup adapter
+        listview.setAdapter(adapter);
       
     }
 
