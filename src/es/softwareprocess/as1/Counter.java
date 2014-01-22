@@ -1,5 +1,6 @@
 package es.softwareprocess.as1;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Counter implements Serializable
@@ -49,4 +50,6 @@ public class Counter implements Serializable
 		this.count++;
 	}
 
+	
+	
 }

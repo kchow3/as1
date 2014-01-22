@@ -30,32 +30,32 @@ public class MainActivity extends Activity{
         listview.setAdapter(adapter);
         
         Button addButton = (Button) findViewById(R.id.addButton);
-        addButton.setOnClickListener(addBtnClick);
+        addButton.setOnClickListener(new OnClickListener() 
+    	{
+    	    public void onClick(View v)
+    	    {
+    	    	Counter aCounter = new Counter();
+    	    	CounterController cntrl = new CounterController();
+    	    	cntrl.addCounter(aCounter);
+    	    }
+    	});
       
     }
-    
-    private OnClickListener addBtnClick = new OnClickListener() 
-	{
-	    public void onClick(View v)
-	    {
-	    	Counter aCounter = new Counter();
-	    	CounterController cntrl = new CounterController();
-	    	cntrl.addCounter(aCounter);
-	    }
-	};
     
     @Override
     protected void onResume()
     {
     	super.onResume();
-    	counterList.loadCounters();
+    	CounterController cntrl = new CounterController();
+    	cntrl.loadCounters();
     }
     
     @Override
     protected void onPause()
     {
     	super.onPause();
-    	counterList.saveCounters();
+    	CounterController cntrl = new CounterController();
+    	cntrl.saveCounters();
     }
     
 }
