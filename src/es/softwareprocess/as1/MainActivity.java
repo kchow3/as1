@@ -19,7 +19,7 @@ public class MainActivity extends Activity{
     protected void onCreate(Bundle icicle) {
     	
         super.onCreate(icicle);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
         countersArrayList = new ArrayList<Counter>();
         CounterList counterList = new CounterList();
         countersArrayList = counterList.getCounterList();
@@ -45,18 +45,11 @@ public class MainActivity extends Activity{
 	    	cntrl.addCounter(aCounter);
 	    }
 	};
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
     
     @Override
     public void onResume()
     {
-    	super.onRestart();
+    	super.onResume();
     }
     
     @Override
