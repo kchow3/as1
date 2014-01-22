@@ -21,7 +21,8 @@ public class MainActivity extends Activity{
         super.onCreate(icicle);
         setContentView(R.layout.activity_main);
         countersArrayList = new ArrayList<Counter>();
-        //need to implement save/resume data
+        CounterList counterList = new CounterList();
+        countersArrayList = counterList.getCounterList();
         
         //setup listview
         ListviewAdapter adapter = new ListviewAdapter(this, countersArrayList);

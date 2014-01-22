@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Counter implements Serializable
 {
+	//serialversionUID
+	private static final long serialVersionUID = 547813201;
 	
 	private String name;
 	private int count;

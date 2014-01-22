@@ -6,8 +6,8 @@ public class CounterController implements CounterControllerInterface {
 
 	private CounterList counterList;
 	
-	public CounterController() {
-		counterList = new CounterList();
+	public CounterController() 
+	{
 	}
 
 	public void addCounter(Counter aCounter) {
@@ -34,6 +34,16 @@ public class CounterController implements CounterControllerInterface {
 
 	public void resetCount(Counter aCounter) {
 		aCounter.setCount(0);
+	}
+	
+	public void saveCounters()
+	{
+		
+	}
+	
+	public void loadCounters()
+	{
+		
 	}
 
 }

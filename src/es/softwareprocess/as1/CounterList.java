@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CounterList {
 	
-	private static ArrayList<Counter> counterList;
+	public static ArrayList<Counter> counterList;
 
 	public CounterList() {
 		super();
@@ -23,5 +23,7 @@ public class CounterList {
 	{
 		return counterList.size();
 	}
+	
+	public st
 
 }
