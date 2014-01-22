@@ -24,6 +24,5 @@ public class CounterList {
 		return counterList.size();
 	}
 	
-	public st
 
 }
