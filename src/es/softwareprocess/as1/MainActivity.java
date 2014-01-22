@@ -1,14 +1,8 @@
 package es.softwareprocess.as1;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.app.Activity;
-import android.widget.Button;
 import android.widget.ListView;
 
 
@@ -30,8 +24,6 @@ public class MainActivity extends Activity{
         
         //setup adapter
         listview.setAdapter(viewAdapter);
-        
-        Button addButton = (Button) findViewById(R.id.addButton);
       
     }
     

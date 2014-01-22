@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class CounterList{
 	
-	public static ArrayList<Counter> counterList;
+	private static ArrayList<Counter> counterList;
 
 	public CounterList() {
 		super();
 		counterList = new ArrayList<Counter>();
 	}
 
-	public static ArrayList<Counter> getCounterList() {
+	public ArrayList<Counter> getCounterList() {
 		return counterList;
 	}
 
-	public static void setCounterList(ArrayList<Counter> counterList) {
+	public void setCounterList(ArrayList<Counter> counterList) {
 		CounterList.counterList = counterList;
 	}
 	
-	public static int size()
+	public int size()
 	{
 		return counterList.size();
 	}

@@ -1,7 +1,5 @@
 package es.softwareprocess.as1;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,6 +68,12 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 		
 		return rowView;
 	}
+	
+	@Override
+	public int getCount() 
+	{
+        return countersArrayList.size();
+    }
 	
 	private OnClickListener incrementBtnClick = new OnClickListener() 
 	{
