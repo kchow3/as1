@@ -12,9 +12,9 @@ import android.widget.Button;
 
 public class ListviewAdapter extends ArrayAdapter<Counter>{
 
-	private final Context context;
+	private Context context;
 	private ViewHolder holder;
-	private final CounterList countersArrayList;
+	private CounterList countersArrayList;
 	
 	public ListviewAdapter(Context context, CounterList countersArrayList)
 	{

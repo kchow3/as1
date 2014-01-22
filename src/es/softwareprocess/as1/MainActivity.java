@@ -32,8 +32,9 @@ public class MainActivity extends Activity{
        	Counter aCounter = new Counter();
        	CounterController cntrl = new CounterController();
      	cntrl.addCounter(aCounter);
-     	viewAdapter.clear();
-     	viewAdapter.addAll(counterList.getCounterList());
+     	//viewAdapter.clear();
+     	//viewAdapter.addAll(counterList.getCounterList());
+     	viewAdapter.add(aCounter);
      	viewAdapter.notifyDataSetChanged();
     }
     
