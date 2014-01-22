@@ -1,6 +1,7 @@
 package es.softwareprocess.as1;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 public class MainActivity extends Activity{
 	
 	CounterList counterList;
+	ListviewAdapter viewAdapter;
 	
     @Override
     protected void onCreate(Bundle icicle) {
@@ -23,23 +25,24 @@ public class MainActivity extends Activity{
         CounterList counterList = new CounterList();
         
         //setup listview
-        ListviewAdapter adapter = new ListviewAdapter(this, counterList);
+        viewAdapter = new ListviewAdapter(this, counterList);
         ListView listview = (ListView) findViewById(R.id.counterListView);
         
         //setup adapter
-        listview.setAdapter(adapter);
+        listview.setAdapter(viewAdapter);
         
         Button addButton = (Button) findViewById(R.id.addButton);
-        addButton.setOnClickListener(new OnClickListener() 
-    	{
-    	    public void onClick(View v)
-    	    {
-    	    	Counter aCounter = new Counter();
-    	    	CounterController cntrl = new CounterController();
-    	    	cntrl.addCounter(aCounter);
-    	    }
-    	});
       
+    }
+    
+    public void addBtnClick(View v)
+    {
+       	Counter aCounter = new Counter();
+       	CounterController cntrl = new CounterController();
+     	cntrl.addCounter(aCounter);
+     	viewAdapter.clear();
+     	viewAdapter.addAll(counterList.getCounterList());
+     	viewAdapter.notifyDataSetChanged();
     }
     
     @Override
