@@ -13,19 +13,17 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity{
 	
-	ArrayList<Counter> countersArrayList;
+	CounterList counterList;
 	
     @Override
     protected void onCreate(Bundle icicle) {
     	
         super.onCreate(icicle);
         setContentView(R.layout.main);
-        countersArrayList = new ArrayList<Counter>();
         CounterList counterList = new CounterList();
-        countersArrayList = counterList.getCounterList();
         
         //setup listview
-        ListviewAdapter adapter = new ListviewAdapter(this, countersArrayList);
+        ListviewAdapter adapter = new ListviewAdapter(this, counterList);
         ListView listview = (ListView) findViewById(R.id.counterListView);
         
         //setup adapter
@@ -47,15 +45,17 @@ public class MainActivity extends Activity{
 	};
     
     @Override
-    public void onResume()
+    protected void onResume()
     {
     	super.onResume();
+    	counterList.loadCounters();
     }
     
     @Override
-    public void onPause()
+    protected void onPause()
     {
     	super.onPause();
+    	counterList.saveCounters();
     }
     
 }

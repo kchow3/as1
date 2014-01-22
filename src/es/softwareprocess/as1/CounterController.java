@@ -8,6 +8,7 @@ public class CounterController implements CounterControllerInterface {
 	
 	public CounterController() 
 	{
+		counterList = new CounterList();
 	}
 
 	public void addCounter(Counter aCounter) {

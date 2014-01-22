@@ -11,4 +11,8 @@ public interface CounterControllerInterface {
 	public void incrementCount(Counter aCounter);
 	
 	public void resetCount(Counter aCounter);
+	
+	public void loadCounters();
+	
+	public void saveCounters();
 }

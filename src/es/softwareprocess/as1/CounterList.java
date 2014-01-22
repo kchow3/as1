@@ -2,7 +2,7 @@ package es.softwareprocess.as1;
 
 import java.util.ArrayList;
 
-public class CounterList {
+public class CounterList{
 	
 	public static ArrayList<Counter> counterList;
 
@@ -24,5 +24,8 @@ public class CounterList {
 		return counterList.size();
 	}
 	
+	public Counter get(int i) {
+		return counterList.get(i);
+	}
 
 }

@@ -16,11 +16,11 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 
 	private final Context context;
 	private ViewHolder holder;
-	private final ArrayList<Counter> countersArrayList;
+	private final CounterList countersArrayList;
 	
-	public ListviewAdapter(Context context, ArrayList<Counter> countersArrayList)
+	public ListviewAdapter(Context context, CounterList countersArrayList)
 	{
-		super(context, R.layout.listview_row, countersArrayList);
+		super(context, R.layout.listview_row, countersArrayList.getCounterList());
 		
 		this.context = context;
 		this.countersArrayList = countersArrayList;
