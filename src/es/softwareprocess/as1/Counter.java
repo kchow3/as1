@@ -1,7 +1,9 @@
 package es.softwareprocess.as1;
+import java.io.Serializable;
 import java.util.*;
 
-public class Counter {
+public class Counter implements Serializable
+{
 	
 	private String name;
 	private int count;
