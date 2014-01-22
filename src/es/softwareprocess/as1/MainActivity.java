@@ -52,4 +52,16 @@ public class MainActivity extends Activity{
         return true;
     }
     
+    @Override
+    public void onResume()
+    {
+    	super.onRestart();
+    }
+    
+    @Override
+    public void onPause()
+    {
+    	super.onPause();
+    }
+    
 }
