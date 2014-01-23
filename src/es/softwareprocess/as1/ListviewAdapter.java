@@ -75,12 +75,18 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
         return countersArrayList.size();
     }
 	
+	public void updateListview(CounterList newCounterList)
+	{
+		countersArrayList = newCounterList;
+		notifyDataSetChanged();
+	}
+	
 	private OnClickListener incrementBtnClick = new OnClickListener() 
 	{
 	    public void onClick(View v)
 	    {
 	    	int i = (Integer) v.getTag();
-	    	CounterController cntrl = new CounterController();
+	    	CounterController cntrl = new CounterController(countersArrayList);
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.incrementCount(aCounter);
 	    	
@@ -92,7 +98,7 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    public void onClick(View v)
 	    {
 	    	int i = (Integer) v.getTag();
-	    	CounterController cntrl = new CounterController();
+	    	CounterController cntrl = new CounterController(countersArrayList);
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.resetCount(aCounter);
 	    }
@@ -103,7 +109,7 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    public void onClick(View v)
 	    {
 	    	int i = (Integer) v.getTag();
-	    	CounterController cntrl = new CounterController();
+	    	CounterController cntrl = new CounterController(countersArrayList);
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.deleteCounter(aCounter);
 	    }

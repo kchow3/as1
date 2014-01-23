@@ -6,9 +6,9 @@ public class CounterController implements CounterControllerInterface {
 
 	private CounterList counterList;
 	
-	public CounterController() 
+	public CounterController(CounterList aCounterList) 
 	{
-		counterList = new CounterList();
+		counterList = aCounterList;
 	}
 
 	public void addCounter(Counter aCounter) {

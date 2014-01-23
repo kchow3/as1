@@ -30,24 +30,16 @@ public class MainActivity extends Activity{
     public void addBtnClick(View v)
     {
        	Counter aCounter = new Counter();
-       	CounterController cntrl = new CounterController();
+       	CounterController cntrl = new CounterController(counterList);
      	cntrl.addCounter(aCounter);
-     	//viewAdapter.clear();
-     	//viewAdapter.addAll(counterList.getCounterList());
-     	viewAdapter=null;
-        viewAdapter = new ListviewAdapter(this, counterList);
-        ListView listview = (ListView) findViewById(R.id.counterListView);
-        listview.setAdapter(viewAdapter);
-        viewAdapter.notifyDataSetChanged();
-     	//viewAdapter.add(aCounter);
-     	//viewAdapter.notifyDataSetChanged();
+     	viewAdapter.updateListview(counterList);
     }
     
     @Override
     protected void onResume()
     {
     	super.onResume();
-    	CounterController cntrl = new CounterController();
+    	CounterController cntrl = new CounterController(counterList);
     	cntrl.loadCounters();
     }
     
@@ -55,7 +47,7 @@ public class MainActivity extends Activity{
     protected void onPause()
     {
     	super.onPause();
-    	CounterController cntrl = new CounterController();
+    	CounterController cntrl = new CounterController(counterList);
     	cntrl.saveCounters();
     }
     
