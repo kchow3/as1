@@ -44,8 +44,23 @@ public class MainActivity extends Activity{
     protected void onResume()
     {
     	super.onResume();
+        
+        //setup listview
+        viewAdapter = new ListviewAdapter(this, counterList);
+        ListView listview = (ListView) findViewById(R.id.counterListView);
+        
+        nameInput = (EditText)findViewById(R.id.counterName);
+        
+        //setup adapter
+        listview.setAdapter(viewAdapter);
+        
     	CounterController cntrl = new CounterController(counterList);
-    	//counterList = cntrl.loadCounters();
+    	if(counterList.size() > 1)
+    	{
+    		counterList = cntrl.loadCounters();
+    		viewAdapter.updateListview(counterList);
+    	}
+    	
     }
     
     @Override
@@ -53,7 +68,7 @@ public class MainActivity extends Activity{
     {
     	super.onPause();
     	CounterController cntrl = new CounterController(counterList);
-    	//cntrl.saveCounters();
+    	cntrl.saveCounters();
     }
     
 }
