@@ -6,7 +6,7 @@ public interface CounterControllerInterface {
 	
 	public void deleteCounter(Counter aCounter);
 	
-	public void renameCounter(String name, int index);
+	public void renameCounter(Counter aCounter, String name);
 	
 	public void incrementCount(Counter aCounter);
 	

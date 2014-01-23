@@ -19,13 +19,10 @@ public class CounterController implements CounterControllerInterface {
 	public void deleteCounter(Counter aCounter) {
 		ArrayList<Counter> list = counterList.getCounterList();
 		list.remove(aCounter);
-		//TODO if this doesn't work, have to pass in index for the counter
 	}
 	
-	public void renameCounter(String name, int index) {
-		ArrayList<Counter> list = counterList.getCounterList();
-		Counter oldCounter = list.get(index);
-		oldCounter.setName(name);
+	public void renameCounter(Counter aCounter, String name) {
+		aCounter.setName(name);
 	}
 
 	public void incrementCount(Counter aCounter) {

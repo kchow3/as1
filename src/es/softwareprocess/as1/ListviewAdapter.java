@@ -1,14 +1,17 @@
 package es.softwareprocess.as1;
 
 import android.content.Context;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.TextView.OnEditorActionListener;
 
 public class ListviewAdapter extends ArrayAdapter<Counter>{
 
@@ -55,6 +58,9 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 		
 		//set text for edit text
 		holder.nameView.setText(countersArrayList.get(position).getName());
+		//set on edit listner for name edit
+		holder.nameView.setOnEditorActionListener(editName);
+		holder.nameView.setTag(position);
 		
 		//set onclick listners for buttons
 		holder.incrementButton.setOnClickListener(incrementBtnClick);
@@ -114,6 +120,28 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.deleteCounter(aCounter);
 	    	updateListview(countersArrayList);
+	    }
+	};
+	
+	private OnEditorActionListener editName = new OnEditorActionListener() 
+	{
+	    @Override
+	    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) 
+	    {
+	        if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+	                actionId == EditorInfo.IME_ACTION_DONE ||
+	                event.getAction() == KeyEvent.ACTION_DOWN &&
+	                event.getKeyCode() == KeyEvent.KEYCODE_ENTER) 
+	        {
+	        	int i = (Integer) v.getTag();
+	        	String name = holder.nameView.getText().toString();
+	        	CounterController cntrl = new CounterController(countersArrayList);
+	        	
+		    	Counter aCounter = countersArrayList.get(i);
+		    	cntrl.renameCounter(aCounter, name);
+		    	updateListview(countersArrayList);
+	        }
+	        return false;
 	    }
 	};
 	
