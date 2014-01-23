@@ -3,6 +3,7 @@ package es.softwareprocess.as1;
 import android.os.Bundle;
 import android.view.View;
 import android.app.Activity;
+import android.widget.EditText;
 import android.widget.ListView;
 
 
@@ -10,6 +11,7 @@ public class MainActivity extends Activity{
 	
 	CounterList counterList;
 	ListviewAdapter viewAdapter;
+	EditText nameInput;
 	
     @Override
     protected void onCreate(Bundle icicle) {
@@ -22,6 +24,8 @@ public class MainActivity extends Activity{
         viewAdapter = new ListviewAdapter(this, counterList);
         ListView listview = (ListView) findViewById(R.id.counterListView);
         
+        nameInput = (EditText)findViewById(R.id.counterName);
+        
         //setup adapter
         listview.setAdapter(viewAdapter);
       
@@ -29,7 +33,8 @@ public class MainActivity extends Activity{
     
     public void addBtnClick(View v)
     {
-       	Counter aCounter = new Counter();
+    	String name = nameInput.getText().toString();
+       	Counter aCounter = new Counter(name);
        	CounterController cntrl = new CounterController(counterList);
      	cntrl.addCounter(aCounter);
      	viewAdapter.updateListview(counterList);

@@ -29,8 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/countersView"
+        <EditText
+            android:id="@+id/counterName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.10"
@@ -38,8 +38,9 @@
             android:height="@dimen/activity_horizontal_margin"
             android:paddingLeft="85dp"
             android:paddingTop="12dp"
-            android:text="Counters"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="Enter Name"
+            android:textAppearance="?android:attr/textAppearanceLarge">
+        </EditText>
 
         <Button
             android:id="@+id/addButton"
@@ -50,10 +51,16 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/counterListView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/counterListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </ListView>
+    </LinearLayout>
 
 </LinearLayout>

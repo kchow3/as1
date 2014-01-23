@@ -1,6 +1,5 @@
 package es.softwareprocess.as1;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Counter implements Serializable
@@ -13,9 +12,9 @@ public class Counter implements Serializable
 	private ArrayList<Date> time;
 	
 	//Constructor method
-	public Counter()
+	public Counter(String name)
 	{
-		this.name = "Name";
+		this.name = name;
 		this.count = 0;
 		this.time = new ArrayList<Date>();
 	}
