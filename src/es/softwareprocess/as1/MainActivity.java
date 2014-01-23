@@ -16,7 +16,7 @@ public class MainActivity extends Activity{
     	
         super.onCreate(icicle);
         setContentView(R.layout.main);
-        CounterList counterList = new CounterList();
+        counterList = new CounterList();
         
         //setup listview
         viewAdapter = new ListviewAdapter(this, counterList);
@@ -34,8 +34,13 @@ public class MainActivity extends Activity{
      	cntrl.addCounter(aCounter);
      	//viewAdapter.clear();
      	//viewAdapter.addAll(counterList.getCounterList());
-     	viewAdapter.add(aCounter);
-     	viewAdapter.notifyDataSetChanged();
+     	viewAdapter=null;
+        viewAdapter = new ListviewAdapter(this, counterList);
+        ListView listview = (ListView) findViewById(R.id.counterListView);
+        listview.setAdapter(viewAdapter);
+        viewAdapter.notifyDataSetChanged();
+     	//viewAdapter.add(aCounter);
+     	//viewAdapter.notifyDataSetChanged();
     }
     
     @Override
