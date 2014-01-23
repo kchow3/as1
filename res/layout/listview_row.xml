@@ -59,7 +59,8 @@
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/incrementButton"
         android:gravity="center|left"
-        android:paddingRight="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:text="Count"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp" />

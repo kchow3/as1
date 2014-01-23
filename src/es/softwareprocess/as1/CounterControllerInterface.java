@@ -12,7 +12,7 @@ public interface CounterControllerInterface {
 	
 	public void resetCount(Counter aCounter);
 	
-	public void loadCounters();
+	public CounterList loadCounters();
 	
 	public void saveCounters();
 }

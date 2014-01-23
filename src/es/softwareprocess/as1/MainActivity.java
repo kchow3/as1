@@ -45,7 +45,7 @@ public class MainActivity extends Activity{
     {
     	super.onResume();
     	CounterController cntrl = new CounterController(counterList);
-    	cntrl.loadCounters();
+    	//counterList = cntrl.loadCounters();
     }
     
     @Override
@@ -53,7 +53,7 @@ public class MainActivity extends Activity{
     {
     	super.onPause();
     	CounterController cntrl = new CounterController(counterList);
-    	cntrl.saveCounters();
+    	//cntrl.saveCounters();
     }
     
 }
