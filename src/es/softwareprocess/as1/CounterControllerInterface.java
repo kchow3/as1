@@ -2,6 +2,8 @@ package es.softwareprocess.as1;
 
 import java.util.ArrayList;
 
+import android.content.Context;
+
 public interface CounterControllerInterface {
 
 	public void addCounter(Counter aCounter);
@@ -14,7 +16,7 @@ public interface CounterControllerInterface {
 	
 	public void resetCount(Counter aCounter);
 	
-	public ArrayList<Counter> loadCounters();
+	public ArrayList<Counter> loadCounters(Context aContext);
 	
-	public void saveCounters();
+	public void saveCounters(Context aContext);
 }

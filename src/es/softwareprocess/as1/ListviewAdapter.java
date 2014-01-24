@@ -108,6 +108,7 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.resetCount(aCounter);
 	    	updateListview(countersArrayList);
+	    	
 	    }
 	};
 	

@@ -1,8 +1,15 @@
 package es.softwareprocess.as1;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.view.View;
 import android.app.Activity;
+import android.content.Context;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -38,7 +45,7 @@ public class MainActivity extends Activity{
        	CounterController cntrl = new CounterController(counterList);
      	cntrl.addCounter(aCounter);
      	viewAdapter.updateListview(counterList);
-     	cntrl.saveCounters();
+     	cntrl.saveCounters(this.getApplicationContext());
     }
     
     @Override
@@ -56,12 +63,39 @@ public class MainActivity extends Activity{
         listview.setAdapter(viewAdapter);
         
     	CounterController cntrl = new CounterController(counterList);
-    	if(counterList.size() > 1)
-    	{
-    		counterList.setCounterList(cntrl.loadCounters());
-    		viewAdapter.updateListview(counterList);
-    	}
-    	
+    	counterList.setCounterList(cntrl.loadCounters(this.getApplicationContext()));
+    	viewAdapter.updateListview(counterList);
     }
+    /*
+    public void saveCounters() {
+		try 
+		{
+			FileOutputStream fos = openFileOutput("file.sav", Context.MODE_PRIVATE);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(counterList.getCounterList());
+			oos.flush();
+			oos.close();
+		}
+		catch(Exception ex) 
+		{
+			ex.printStackTrace();
+		}
+
+	}
     
+	public ArrayList<Counter> loadCounters() {
+		try
+		{
+			FileInputStream fis = openFileInput("file.sav");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			Object o = ois.readObject();
+			return (ArrayList<Counter>)o;
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		return null;
+	}
+    */
 }

@@ -39,11 +39,11 @@ public class CounterController implements CounterControllerInterface {
 	public void resetCount(Counter aCounter) {
 		aCounter.setCount(0);
 	}
-
-	public void saveCounters() {
+	
+	public void saveCounters(Context aContext){
 		try 
 		{
-			FileOutputStream fos = openFileOutput("file.sav", Context.MODE_PRIVATE);
+			FileOutputStream fos =  aContext.openFileOutput("file.sav", Context.MODE_PRIVATE);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(counterList.getCounterList());
 			oos.flush();
@@ -56,10 +56,11 @@ public class CounterController implements CounterControllerInterface {
 
 	}
 
-	public ArrayList<Counter> loadCounters() {
+	public ArrayList<Counter> loadCounters(Context aContext) {
 		try
 		{
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("file.sav"));
+			FileInputStream fis = aContext.openFileInput("file.sav");
+			ObjectInputStream ois = new ObjectInputStream(fis);
 			Object o = ois.readObject();
 			return (ArrayList<Counter>)o;
 		}
@@ -69,5 +70,4 @@ public class CounterController implements CounterControllerInterface {
 		}
 		return null;
 	}
-
 }
