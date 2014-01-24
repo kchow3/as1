@@ -50,8 +50,6 @@ public class MainActivity extends Activity{
         viewAdapter = new ListviewAdapter(this, counterList);
         ListView listview = (ListView) findViewById(R.id.counterListView);
         
-        nameInput = (EditText)findViewById(R.id.counterName);
-        
         //setup adapter
         listview.setAdapter(viewAdapter);
         
