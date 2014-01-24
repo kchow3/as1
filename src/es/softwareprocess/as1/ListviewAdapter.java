@@ -85,6 +85,8 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	{
 		countersArrayList = newCounterList;
 		notifyDataSetChanged();
+		CounterController cntrl = new CounterController(countersArrayList);
+		cntrl.saveCounters(this.getContext());
 	}
 	
 	private OnClickListener incrementBtnClick = new OnClickListener() 
