@@ -1,5 +1,7 @@
 package es.softwareprocess.as1;
 
+import java.util.ArrayList;
+
 public interface CounterControllerInterface {
 
 	public void addCounter(Counter aCounter);
@@ -12,7 +14,7 @@ public interface CounterControllerInterface {
 	
 	public void resetCount(Counter aCounter);
 	
-	public CounterList loadCounters();
+	public ArrayList<Counter> loadCounters();
 	
 	public void saveCounters();
 }

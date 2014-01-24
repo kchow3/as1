@@ -38,6 +38,7 @@ public class MainActivity extends Activity{
        	CounterController cntrl = new CounterController(counterList);
      	cntrl.addCounter(aCounter);
      	viewAdapter.updateListview(counterList);
+     	cntrl.saveCounters();
     }
     
     @Override
@@ -57,18 +58,10 @@ public class MainActivity extends Activity{
     	CounterController cntrl = new CounterController(counterList);
     	if(counterList.size() > 1)
     	{
-    		counterList = cntrl.loadCounters();
+    		counterList.setCounterList(cntrl.loadCounters());
     		viewAdapter.updateListview(counterList);
     	}
     	
-    }
-    
-    @Override
-    protected void onPause()
-    {
-    	super.onPause();
-    	CounterController cntrl = new CounterController(counterList);
-    	cntrl.saveCounters();
     }
     
 }

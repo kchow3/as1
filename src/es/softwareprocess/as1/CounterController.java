@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+import android.content.Context;
+
 public class CounterController implements CounterControllerInterface {
 
 	private CounterList counterList;
@@ -41,28 +43,29 @@ public class CounterController implements CounterControllerInterface {
 	public void saveCounters() {
 		try 
 		{
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("file.sav")));
-			oos.writeObject(counterList);
+			FileOutputStream fos = openFileOutput("file.sav", Context.MODE_PRIVATE);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(counterList.getCounterList());
 			oos.flush();
 			oos.close();
 		}
 		catch(Exception ex) 
 		{
-			
+			ex.printStackTrace();
 		}
 
 	}
 
-	public CounterList loadCounters() {
+	public ArrayList<Counter> loadCounters() {
 		try
 		{
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("file.sav")));
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("file.sav"));
 			Object o = ois.readObject();
-			return (CounterList)o;
+			return (ArrayList<Counter>)o;
 		}
 		catch(Exception ex)
 		{
-			
+			ex.printStackTrace();
 		}
 		return null;
 	}
