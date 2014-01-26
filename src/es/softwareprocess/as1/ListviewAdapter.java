@@ -1,6 +1,7 @@
 package es.softwareprocess.as1;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -136,7 +137,7 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	                event.getKeyCode() == KeyEvent.KEYCODE_ENTER) 
 	        {
 	        	int i = (Integer) v.getTag();
-	        	String name = holder.nameView.getText().toString();
+	        	String name = v.getText().toString();
 	        	CounterController cntrl = new CounterController(countersArrayList);
 	        	
 		    	Counter aCounter = countersArrayList.get(i);

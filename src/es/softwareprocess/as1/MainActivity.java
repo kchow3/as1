@@ -1,5 +1,7 @@
 package es.softwareprocess.as1;
 
+import java.io.File;
+
 import android.os.Bundle;
 import android.view.View;
 import android.app.Activity;
@@ -53,8 +55,12 @@ public class MainActivity extends Activity{
         //setup adapter
         listview.setAdapter(viewAdapter);
         
-    	CounterController cntrl = new CounterController(counterList);
-    	counterList.setCounterList(cntrl.loadCounters(this.getApplicationContext()));
+        File file = this.getApplicationContext().getFileStreamPath("file.sav");
+        if(file.exists())
+        {
+        	CounterController cntrl = new CounterController(counterList);
+        	counterList.setCounterList(cntrl.loadCounters(this.getApplicationContext()));
+        }
     	viewAdapter.updateListview(counterList);
     }
 }
