@@ -37,6 +37,7 @@ public class CounterController implements CounterControllerInterface {
 
 	public void resetCount(Counter aCounter) {
 		aCounter.setCount(0);
+		aCounter.clearTime();
 	}
 	
 	public void saveCounters(Context aContext){

@@ -9,14 +9,14 @@ public class Counter implements Serializable
 	
 	private String name;
 	private int count;
-	private ArrayList<Date> time;
+	private ArrayList<Calendar> time;
 	
 	//Constructor method
 	public Counter(String name)
 	{
 		this.name = name;
 		this.count = 0;
-		this.time = new ArrayList<Date>();
+		this.time = new ArrayList<Calendar>();
 	}
 
 	//Getters and Setters
@@ -36,19 +36,24 @@ public class Counter implements Serializable
 		this.count = count;
 	}
 
-	public ArrayList<Date> getTime() {
+	public ArrayList<Calendar> getTime() {
 		return time;
 	}
 
-	public void setTime(ArrayList<Date> time) {
+	public void setTime(ArrayList<Calendar> time) {
 		this.time = time;
 	}
 	
 	public void increaseCount()
 	{
 		this.count++;
+		Calendar date = Calendar.getInstance();
+		this.time.add(date);
 	}
 
-	
+	public void clearTime()
+	{
+		this.time.clear();
+	}
 	
 }
