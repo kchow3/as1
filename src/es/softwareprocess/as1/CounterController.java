@@ -75,6 +75,13 @@ public class CounterController implements CounterControllerInterface {
 	{
 		ArrayList<String> list = new ArrayList<String>();
 		
+		for(Counter aCounter : (counterList.getCounterList()())
+		{
+			list.add((aCounter.getName() + ":"));
+			list.addAll(aCounter.countPerHour);
+			
+		}
+		
 		return list;
 	}
 }

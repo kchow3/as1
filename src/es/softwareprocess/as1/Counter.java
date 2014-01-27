@@ -56,4 +56,32 @@ public class Counter implements Serializable
 		this.time.clear();
 	}
 	
+	public ArrayList<String> countPerHour()
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		
+		return list;
+	}
+	
+	public ArrayList<String> countPerDay()
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		
+		return list;
+	}
+	
+	public ArrayList<String> countPerWeek()
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		
+		return list;
+	}
+	
+	public ArrayList<String> countPerMonth()
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		
+		return list;
+	}
+	
 }
