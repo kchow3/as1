@@ -70,4 +70,11 @@ public class CounterController implements CounterControllerInterface {
 		}
 		return null;
 	}
+	
+	public ArrayList<String> loadStats()
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		
+		return list;
+	}
 }

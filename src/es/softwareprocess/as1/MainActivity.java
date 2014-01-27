@@ -1,17 +1,19 @@
 package es.softwareprocess.as1;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.view.View;
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.EditText;
 import android.widget.ListView;
 
 
 public class MainActivity extends Activity{
 	
-	 public final static String EXTRA_MESSAGE = "es.softwareprocess.as1.stats";
+	 public final static String EXTRA_STATS = "es.softwareprocess.as1.stats";
 	
 	CounterList counterList;
 	ListviewAdapter viewAdapter;
@@ -43,6 +45,15 @@ public class MainActivity extends Activity{
      	cntrl.addCounter(aCounter);
      	viewAdapter.updateListview(counterList);
      	cntrl.saveCounters(this.getApplicationContext());
+    }
+    
+    public void statsBtnClick(View v)
+    {
+    	CounterController cntrl = new CounterController(counterList);
+    	ArrayList<String> list = cntrl.loadStats();
+    	Intent i = new Intent(MainActivity.this, StatsActivity.class);
+    	i.putExtra(EXTRA_STATS, list);
+    	startActivity(i); 
     }
     
     @Override

@@ -19,4 +19,6 @@ public interface CounterControllerInterface {
 	public ArrayList<Counter> loadCounters(Context aContext);
 	
 	public void saveCounters(Context aContext);
+	
+	public ArrayList<String> loadStats();
 }
