@@ -75,10 +75,26 @@ public class CounterController implements CounterControllerInterface {
 	{
 		ArrayList<String> list = new ArrayList<String>();
 		
-		for(Counter aCounter : (counterList.getCounterList()())
+		for(Counter aCounter : (counterList.getCounterList()))
 		{
-			list.add((aCounter.getName() + ":"));
-			list.addAll(aCounter.countPerHour);
+			if(aCounter.getCount() > 0)
+			{
+				//add counter name
+				list.add((aCounter.getName() + ":"));
+				//get count per hour
+				list.add("Counts Per Hour:");
+				list.addAll(aCounter.countPerHour());
+				//get count per day
+				list.add("Counts Per Day:");
+				list.addAll(aCounter.countPerDay());
+				//get count per week
+				list.add("Counts Per Week:");
+				list.addAll(aCounter.countPerWeek());
+				//get count per month
+				list.add("Counts Per Month:");
+				list.addAll(aCounter.countPerMonth());
+				
+			}
 			
 		}
 		
