@@ -9,19 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/countersButton"
+        <TextView
+            android:id="@+id/counterTitle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.34"
-            android:text="Counters" />
+            android:layout_height="match_parent"
+            android:layout_weight="0.70"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Counters"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/statsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.51"
-            android:text="Stats" />
+            android:layout_weight="0.54"
+            android:text="Statistics" />
 
     </LinearLayout>
 

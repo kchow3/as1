@@ -11,6 +11,8 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity{
 	
+	 public final static String EXTRA_MESSAGE = "es.softwareprocess.as1.stats";
+	
 	CounterList counterList;
 	ListviewAdapter viewAdapter;
 	EditText nameInput;
