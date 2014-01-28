@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
+import android.widget.ArrayAdapter;
 
 public class StatsActivity extends Activity {
 	
-	private ArrayList<String> stats;
+	ArrayAdapter<String> adapter;
+	private ArrayList<String> statsList;
 
 	@Override
 	protected void onCreate(Bundle icicle) 
@@ -20,6 +19,8 @@ public class StatsActivity extends Activity {
 		super.onCreate(icicle);
 		setContentView(R.layout.activity_stats);
 		getInputList();
+		adapter= new ArrayAdapter<String>(this, statsList);
+	    setListAdapter(adapter);
 	}
 	
 	protected void onResume()
@@ -37,7 +38,7 @@ public class StatsActivity extends Activity {
 	{
 		Intent in = getIntent();
 		ArrayList<String> list =(ArrayList<String>) in.getSerializableExtra(MainActivity.EXTRA_STATS);
-		stats.addAll(list);
+		statsList.addAll(list);
 	}
 
 }
