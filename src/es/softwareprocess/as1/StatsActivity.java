@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class StatsActivity extends Activity {
+	
+	public final static String EXTRA_STATS = "es.softwareprocess.as1.stats";
 	
 	ArrayAdapter<String> stringAdapter;
 	private ArrayList<String> statsList;
@@ -25,6 +28,7 @@ public class StatsActivity extends Activity {
 		super.onResume();
 		setContentView(R.layout.activity_stats);
 		getInputList();
+		Log.w("size", Integer.toString(statsList.size()));
 		
 		ListView statsListView = (ListView) findViewById(R.id.listViewStats);
 		stringAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, statsList);
@@ -39,8 +43,8 @@ public class StatsActivity extends Activity {
 	private void getInputList()
 	{
 		Intent in = getIntent();
-		ArrayList<String> list = (ArrayList<String>) in.getSerializableExtra(MainActivity.EXTRA_STATS);
-		statsList.addAll(list);
+		statsList = in.getStringArrayListExtra(EXTRA_STATS);
+		Log.w("size", Integer.toString(statsList.size()));
 	}
 
 }

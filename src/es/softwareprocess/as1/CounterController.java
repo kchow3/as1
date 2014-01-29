@@ -93,7 +93,6 @@ public class CounterController implements CounterControllerInterface {
 				//get count per month
 				list.add("Counts Per Month:");
 				list.addAll(aCounter.countPerMonth());
-				
 			}
 			
 		}

@@ -3,6 +3,8 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import android.util.Log;
+
 public class Counter implements Serializable
 {
 	//serialversionUID
@@ -60,38 +62,41 @@ public class Counter implements Serializable
 	public ArrayList<String> countPerHour()
 	{
 		ArrayList<String> list = new ArrayList<String>();
-		int month, day, hour, min, period;
-		String format;
+		int hour = 0;
+		String format = "";
 		int count = 0;
-		
-		for(int i=0; i < time.size(); i=count)
+
+		for(int i=0; i < time.size(); i=count+1)
 		{
-			Calendar cal = (time.get(i)).getInstance();
-			month = cal.get(Calendar.MONTH); //zero based
-			day = cal.get(Calendar.DAY_OF_MONTH);
+			count = 1;
+			Calendar cal = time.get(i);
 			hour = cal.get(Calendar.HOUR);
-			min = cal.get(Calendar.MINUTE);
-			period = cal.get(Calendar.AM_PM); //AM=0, PM=1
 			
-			format = new SimpleDateFormat("MMM d HH:mmAA").format(cal);
+			format = (new SimpleDateFormat("MMM d HH:mmaa")).format(cal.getTime());
 			Calendar newCal = (Calendar) cal.clone();
 			newCal.set(Calendar.HOUR, hour+1);
+			//Log.w("Date:", format);
+			//format = (new SimpleDateFormat("MMM d HH:mmaa")).format(newCal.getTime());
+			//Log.w("Date2:", format);
+			//Log.w("thecount", Integer.toString(count));
+			//Log.w("thehour", Integer.toString(hour));
 			
 			for(int j=i+1; j < time.size(); j++)
 			{
+				//Log.w("thecount", Integer.toString(count));
 				//check if pass the hour
-				if((time.get(j).getInstance()).before(newCal))
+				if(time.get(j).before(newCal))
 				{
 					count++;
-				}
-				else
-				{
-					//after the hour, add to output and break out of this loop
-					list.add(format + ": " + Integer.toString(count));
-					break;
+					//Log.w("thecount", Integer.toString(count));
 				}
 			}
+			list.add(format + ": " + Integer.toString(count));
+			//Log.w("added", "pass");
 		}
+		
+		
+		//Log.w("sizelist", Integer.toString(list.size()));
 		
 		return list;
 	}

@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
@@ -51,8 +52,9 @@ public class MainActivity extends Activity{
     {
     	CounterController cntrl = new CounterController(counterList);
     	ArrayList<String> list = cntrl.loadStats();
-    	Intent i = new Intent(MainActivity.this, StatsActivity.class);
-    	i.putExtra(EXTRA_STATS, list);
+    	Log.w("sizelist", Integer.toString(list.size()));
+    	Intent i = new Intent(getApplicationContext(), StatsActivity.class);
+    	i.putStringArrayListExtra(EXTRA_STATS, list);
     	startActivity(i); 
     }
     
