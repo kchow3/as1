@@ -1,5 +1,6 @@
 package es.softwareprocess.as1;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Counter implements Serializable
@@ -59,6 +60,37 @@ public class Counter implements Serializable
 	public ArrayList<String> countPerHour()
 	{
 		ArrayList<String> list = new ArrayList<String>();
+		int month, day, hour, min, period;
+		String format;
+		int count = 0;
+		
+		for(int i=0; i < time.size(); i=count)
+		{
+			Calendar cal = (time.get(i)).getInstance();
+			month = cal.get(Calendar.MONTH); //zero based
+			day = cal.get(Calendar.DAY_OF_MONTH);
+			hour = cal.get(Calendar.HOUR);
+			min = cal.get(Calendar.MINUTE);
+			period = cal.get(Calendar.AM_PM); //AM=0, PM=1
+			
+			format = new SimpleDateFormat("MMM d HH:mmAA").format(cal);
+			Calendar newCal = (Calendar) cal.clone();
+			newCal.set(Calendar.HOUR, hour+1);
+			
+			for(int j=i+1; j < time.size(); j++)
+			{
+				//check if pass the hour
+				if((time.get(j).getInstance()).before(newCal))
+				{
+					count++;
+				}
+				else
+				{
+					list.add(format + ": " + Integer.toString(count));
+					break;
+				}
+			}
+		}
 		
 		return list;
 	}

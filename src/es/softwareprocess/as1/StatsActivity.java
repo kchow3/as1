@@ -7,26 +7,28 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class StatsActivity extends Activity {
 	
-	ArrayAdapter<String> adapter;
+	ArrayAdapter<String> stringAdapter;
 	private ArrayList<String> statsList;
 
 	@Override
 	protected void onCreate(Bundle icicle) 
 	{
 		super.onCreate(icicle);
-		setContentView(R.layout.activity_stats);
-		getInputList();
-		adapter= new ArrayAdapter<String>(this, statsList);
-	    setListAdapter(adapter);
 	}
 	
 	protected void onResume()
 	{
 		super.onResume();
+		setContentView(R.layout.activity_stats);
 		getInputList();
+		
+		ListView statsListView = (ListView) findViewById(R.id.listViewStats);
+		stringAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, statsList);
+		statsListView.setAdapter(stringAdapter);
 	}
 	
 	public void countersBtnClick(View v)
@@ -37,7 +39,7 @@ public class StatsActivity extends Activity {
 	private void getInputList()
 	{
 		Intent in = getIntent();
-		ArrayList<String> list =(ArrayList<String>) in.getSerializableExtra(MainActivity.EXTRA_STATS);
+		ArrayList<String> list = (ArrayList<String>) in.getSerializableExtra(MainActivity.EXTRA_STATS);
 		statsList.addAll(list);
 	}
 
