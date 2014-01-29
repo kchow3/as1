@@ -86,6 +86,7 @@ public class Counter implements Serializable
 				}
 				else
 				{
+					//after the hour, add to output and break out of this loop
 					list.add(format + ": " + Integer.toString(count));
 					break;
 				}
