@@ -5,10 +5,13 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.content.Context;
 
-public class CounterController implements CounterControllerInterface {
+public class CounterController implements CounterControllerInterface
+{
 
 	private CounterList counterList;
 
@@ -80,7 +83,7 @@ public class CounterController implements CounterControllerInterface {
 			if(aCounter.getCount() > 0)
 			{
 				//add counter name
-				list.add((aCounter.getName() + " COUNT STATISTICS:"));
+				list.add((aCounter.getName() + " -- COUNT STATISTICS:"));
 				//get count per hour
 				list.add("Counts Per Hour:");
 				list.addAll(aCounter.countPerHour());
@@ -96,7 +99,17 @@ public class CounterController implements CounterControllerInterface {
 			}
 			
 		}
-		
 		return list;
 	}
+	
+	public void sortCounters()
+	{
+		Collections.sort((counterList.getCounterList()), new Comparator<Counter>() {
+			@Override
+			public int compare(Counter counter1, Counter counter2) {
+				return counter2.getCount() - counter1.getCount();
+			}
+		});
+	}
+	
 }

@@ -110,6 +110,7 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    	CounterController cntrl = new CounterController(countersArrayList);
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.resetCount(aCounter);
+	    	cntrl.sortCounters();
 	    	updateListview(countersArrayList);
 	    }
 	};
@@ -122,6 +123,7 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	    	CounterController cntrl = new CounterController(countersArrayList);
 	    	Counter aCounter = countersArrayList.get(i);
 	    	cntrl.deleteCounter(aCounter);
+	    	cntrl.sortCounters();
 	    	updateListview(countersArrayList);
 	    }
 	};
