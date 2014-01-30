@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name="es.softwareprocess.as1.StatsActivity"
-            android:label="@string/title_activity_stats"
+            android:label="kchow3-Counter"
             android:parentActivityName="es.softwareprocess.as1.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
