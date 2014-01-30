@@ -3,6 +3,8 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import android.util.Log;
+
 
 public class Counter implements Serializable
 {
@@ -61,31 +63,30 @@ public class Counter implements Serializable
 	public ArrayList<String> countPerHour()
 	{
 		ArrayList<String> list = new ArrayList<String>();
-		int hour = 0;
 		String format = "";
 		int count = 0;
 
-		for(int i=0; i < time.size(); i=count+1)
+		for(int i=0; i < time.size(); i++)
 		{
 			count = 1;
-			Calendar cal = time.get(i);
-			hour = cal.get(Calendar.HOUR);
+			Calendar cal1 = time.get(i);
 			
-			format = (new SimpleDateFormat("MMM d, H:mmaa")).format(cal.getTime());
-			Calendar newCal = (Calendar) cal.clone();
-			newCal.set(Calendar.HOUR, hour+1);
+			format = (new SimpleDateFormat("MMM d, HH:mm")).format(cal1.getTime());
 			
 			for(int j=i+1; j < time.size(); j++)
 			{
-				//check if pass the hour
-				if(time.get(j).before(newCal))
+				Calendar cal2 = time.get(j);
+				//check if during the same day
+				if( cal1.get(Calendar.YEAR ) == cal2.get(Calendar.YEAR) &&
+						cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR) &&
+						cal1.get(Calendar.HOUR_OF_DAY) == cal2.get(Calendar.HOUR_OF_DAY))
 				{
 					count++;
+					i++;
 				}
 			}
 			list.add(format + " -- " + Integer.toString(count));
 		}
-		
 		return list;
 	}
 	
@@ -95,7 +96,7 @@ public class Counter implements Serializable
 		String format = "";
 		int count = 0;
 
-		for(int i=0; i < time.size(); i=count+1)
+		for(int i=0; i < time.size(); i++)
 		{
 			count = 1;
 			Calendar cal1 = time.get(i);
@@ -110,6 +111,7 @@ public class Counter implements Serializable
 						cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
 				{
 					count++;
+					i++;
 				}
 			}
 			list.add(format + " -- " + Integer.toString(count));
@@ -124,7 +126,7 @@ public class Counter implements Serializable
 		String format = "";
 		int count = 0;
 
-		for(int i=0; i < time.size(); i=count+1)
+		for(int i=0; i < time.size(); i++)
 		{
 			count = 1;
 			Calendar cal1 = time.get(i);
@@ -139,6 +141,7 @@ public class Counter implements Serializable
 						cal1.get(Calendar.WEEK_OF_YEAR) == cal2.get(Calendar.WEEK_OF_YEAR))
 				{
 					count++;
+					i++;
 				}
 			}
 			list.add("Week of " + format + " -- " + Integer.toString(count));
@@ -153,7 +156,7 @@ public class Counter implements Serializable
 		String format = "";
 		int count = 0;
 
-		for(int i=0; i < time.size(); i=count+1)
+		for(int i=0; i < time.size(); i++)
 		{
 			count = 1;
 			Calendar cal1 = time.get(i);
@@ -168,6 +171,7 @@ public class Counter implements Serializable
 						cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH))
 				{
 					count++;
+					i++;
 				}
 			}
 			list.add("Month of " + format + " -- " + Integer.toString(count));
