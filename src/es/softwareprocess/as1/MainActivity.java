@@ -44,6 +44,7 @@ public class MainActivity extends Activity{
        	Counter aCounter = new Counter(name);
        	CounterController cntrl = new CounterController(counterList);
      	cntrl.addCounter(aCounter);
+     	cntrl.sortCounters();
      	viewAdapter.updateListview(counterList);
      	cntrl.saveCounters(this.getApplicationContext());
     }
@@ -51,6 +52,7 @@ public class MainActivity extends Activity{
     public void statsBtnClick(View v)
     {
     	CounterController cntrl = new CounterController(counterList);
+    	cntrl.sortCounters();
     	ArrayList<String> list = cntrl.loadStats();
     	Log.w("sizelist", Integer.toString(list.size()));
     	Intent i = new Intent(getApplicationContext(), StatsActivity.class);
@@ -75,6 +77,7 @@ public class MainActivity extends Activity{
         {
         	CounterController cntrl = new CounterController(counterList);
         	counterList.setCounterList(cntrl.loadCounters(this.getApplicationContext()));
+        	cntrl.sortCounters();
         }
     	viewAdapter.updateListview(counterList);
     }

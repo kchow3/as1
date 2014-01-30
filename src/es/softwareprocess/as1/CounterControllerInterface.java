@@ -16,6 +16,8 @@ public interface CounterControllerInterface {
 	
 	public void resetCount(Counter aCounter);
 	
+	public void sortCounters();
+	
 	public ArrayList<Counter> loadCounters(Context aContext);
 	
 	public void saveCounters(Context aContext);
