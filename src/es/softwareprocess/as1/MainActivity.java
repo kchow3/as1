@@ -47,6 +47,7 @@ public class MainActivity extends Activity{
      	cntrl.sortCounters();
      	viewAdapter.updateListview(counterList);
      	cntrl.saveCounters(this.getApplicationContext());
+     	nameInput.setText("");
     }
     
     public void statsBtnClick(View v)
