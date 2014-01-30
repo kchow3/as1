@@ -32,7 +32,9 @@ public class ListviewAdapter extends ArrayAdapter<Counter>{
 	{
          TextView countView;
          EditText nameView;
-         Button incrementButton, resetButton, deleteButton;
+         Button incrementButton;
+		Button resetButton;
+		Button deleteButton;
     }
 	
 	@Override

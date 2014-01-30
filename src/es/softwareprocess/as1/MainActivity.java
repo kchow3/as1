@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 
+
 public class MainActivity extends Activity{
 	
 	 public final static String EXTRA_STATS = "es.softwareprocess.as1.stats";
