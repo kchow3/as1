@@ -17,9 +17,12 @@ public class MainActivity extends Activity{
 	
 	 public final static String EXTRA_STATS = "es.softwareprocess.as1.stats";
 	
-	CounterList counterList;
-	ListviewAdapter viewAdapter;
-	EditText nameInput;
+	/** 
+	 * @uml.property name="counterList"
+	 */
+	private CounterList counterList;
+	private ListviewAdapter viewAdapter;
+	private EditText nameInput;
 	
     @Override
     protected void onCreate(Bundle icicle) {

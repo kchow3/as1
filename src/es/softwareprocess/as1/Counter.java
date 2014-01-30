@@ -5,12 +5,20 @@ import java.util.*;
 
 import android.util.Log;
 
-
+/*
+ * Counter Class for the counter objects
+ * this object represents the counters and has attributes:
+ * name, count and a list of time of each count.
+ * This class implements serializable so the counter objects
+ * can be saved into a serial form.
+ * This class is mainly called from the counter controller. 
+ */
 public class Counter implements Serializable
 {
 	//serialversionUID
 	private static final long serialVersionUID = 547813201;
 	
+	//attributes of each instance of counter
 	private String name;
 	private int count;
 	private ArrayList<Calendar> time;
@@ -48,6 +56,11 @@ public class Counter implements Serializable
 		this.time = time;
 	}
 	
+	/*
+	 * the method that increases the counter's count
+	 * and adds the current time stamp to the time list
+	 * which will be used for loading stats 
+	 */
 	public void increaseCount()
 	{
 		this.count++;
@@ -55,11 +68,16 @@ public class Counter implements Serializable
 		this.time.add(date);
 	}
 
+	//clear the time after a count reset
 	public void clearTime()
 	{
 		this.time.clear();
 	}
 	
+	/*
+	 * this method counts how many counts are in
+	 * 
+	 */
 	public ArrayList<String> countPerHour()
 	{
 		ArrayList<String> list = new ArrayList<String>();
@@ -72,6 +90,7 @@ public class Counter implements Serializable
 			Calendar cal1 = time.get(i);
 			
 			format = (new SimpleDateFormat("MMM d, HH:mm")).format(cal1.getTime());
+			
 			
 			for(int j=i+1; j < time.size(); j++)
 			{
