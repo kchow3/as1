@@ -80,7 +80,7 @@ public class CounterController implements CounterControllerInterface {
 			if(aCounter.getCount() > 0)
 			{
 				//add counter name
-				list.add((aCounter.getName() + " COUNT STATISTICS:"));
+				list.add((aCounter.getName() + " -- COUNT STATISTICS:"));
 				//get count per hour
 				list.add("Counts Per Hour:");
 				list.addAll(aCounter.countPerHour());

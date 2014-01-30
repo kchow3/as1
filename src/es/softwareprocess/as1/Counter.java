@@ -84,7 +84,7 @@ public class Counter implements Serializable
 					count++;
 				}
 			}
-			list.add(format + ": " + Integer.toString(count));
+			list.add(format + " -- " + Integer.toString(count));
 		}
 		
 		return list;
@@ -113,7 +113,7 @@ public class Counter implements Serializable
 					count++;
 				}
 			}
-			list.add(format + ": " + Integer.toString(count));
+			list.add(format + " -- " + Integer.toString(count));
 		}
 		
 		return list;
@@ -122,6 +122,28 @@ public class Counter implements Serializable
 	public ArrayList<String> countPerWeek()
 	{
 		ArrayList<String> list = new ArrayList<String>();
+		String format = "";
+		int count = 0;
+
+		for(int i=0; i < time.size(); i=count+1)
+		{
+			count = 1;
+			Calendar cal1 = time.get(i);
+			
+			format = (new SimpleDateFormat("MMM d")).format(cal1.getTime());
+			
+			for(int j=i+1; j < time.size(); j++)
+			{
+				Calendar cal2 = time.get(j);
+				//check if during the same day
+				if( cal1.get(Calendar.YEAR ) == cal2.get(Calendar.YEAR) &&
+						cal1.get(Calendar.WEEK_OF_YEAR) == cal2.get(Calendar.WEEK_OF_YEAR))
+				{
+					count++;
+				}
+			}
+			list.add("Week of " + format + " -- " + Integer.toString(count));
+		}
 		
 		return list;
 	}
@@ -129,6 +151,28 @@ public class Counter implements Serializable
 	public ArrayList<String> countPerMonth()
 	{
 		ArrayList<String> list = new ArrayList<String>();
+		String format = "";
+		int count = 0;
+
+		for(int i=0; i < time.size(); i=count+1)
+		{
+			count = 1;
+			Calendar cal1 = time.get(i);
+			
+			format = (new SimpleDateFormat("MMM d")).format(cal1.getTime());
+			
+			for(int j=i+1; j < time.size(); j++)
+			{
+				Calendar cal2 = time.get(j);
+				//check if during the same day
+				if( cal1.get(Calendar.YEAR ) == cal2.get(Calendar.YEAR) &&
+						cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH))
+				{
+					count++;
+				}
+			}
+			list.add("Month of " + format + " -- " + Integer.toString(count));
+		}
 		
 		return list;
 	}
