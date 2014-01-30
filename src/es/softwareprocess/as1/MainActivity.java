@@ -52,7 +52,6 @@ public class MainActivity extends Activity{
     {
     	CounterController cntrl = new CounterController(counterList);
     	ArrayList<String> list = cntrl.loadStats();
-    	Log.w("sizelist", Integer.toString(list.size()));
     	Intent i = new Intent(getApplicationContext(), StatsActivity.class);
     	i.putStringArrayListExtra(EXTRA_STATS, list);
     	startActivity(i); 

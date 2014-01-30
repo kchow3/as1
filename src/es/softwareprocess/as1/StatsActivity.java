@@ -28,7 +28,6 @@ public class StatsActivity extends Activity {
 		super.onResume();
 		setContentView(R.layout.activity_stats);
 		getInputList();
-		Log.w("size", Integer.toString(statsList.size()));
 		
 		ListView statsListView = (ListView) findViewById(R.id.listViewStats);
 		stringAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, statsList);
@@ -44,7 +43,6 @@ public class StatsActivity extends Activity {
 	{
 		Intent in = getIntent();
 		statsList = in.getStringArrayListExtra(EXTRA_STATS);
-		Log.w("size", Integer.toString(statsList.size()));
 	}
 
 }

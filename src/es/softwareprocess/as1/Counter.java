@@ -72,7 +72,7 @@ public class Counter implements Serializable
 			Calendar cal = time.get(i);
 			hour = cal.get(Calendar.HOUR);
 			
-			format = (new SimpleDateFormat("MMM d HH:mmaa")).format(cal.getTime());
+			format = (new SimpleDateFormat("MMM d, HH:mmaa")).format(cal.getTime());
 			Calendar newCal = (Calendar) cal.clone();
 			newCal.set(Calendar.HOUR, hour+1);
 			//Log.w("Date:", format);
