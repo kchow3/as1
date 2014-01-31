@@ -2,7 +2,8 @@ package cs.ualberta.ca.as1;
 
 import java.util.ArrayList;
 
-import es.softwareprocess.as1.R;
+import cs.ualberta.ca.R;
+
 
 import android.os.Bundle;
 import android.app.Activity;

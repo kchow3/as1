@@ -3,7 +3,8 @@ package cs.ualberta.ca.as1;
 import java.io.File;
 import java.util.ArrayList;
 
-import es.softwareprocess.as1.R;
+import cs.ualberta.ca.R;
+
 
 import android.os.Bundle;
 import android.util.Log;

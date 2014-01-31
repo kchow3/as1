@@ -1,6 +1,6 @@
 package cs.ualberta.ca.as1;
 
-import es.softwareprocess.as1.R;
+import cs.ualberta.ca.R;
 import android.content.Context;
 import android.util.Log;
 import android.view.KeyEvent;
