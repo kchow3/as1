@@ -1,0 +1,45 @@
+Notes that are on the UML diagram.
+
+Counter Class: one of the main classes that creates the counter
+objects that is used throughout the app. It has name for the
+counter, a count for the counter and a time list, which holds 
+calendar obejcts to hold all the time stamps of when a counter 
+is pressed. The main responsibility is get and set the properties
+of counters and calculate the statistics for each counter with
+the use of the time list. This class is constructed by the 
+CounterController class and is store in a CounterList
+class and is controlled through the CounterController class.
+This class also implements the serializable class so that the
+counters can be saved in a serializable form and loaded back
+up when the app is either paused or closed.
+
+
+CounterList Class: another main class that store the counters through a 
+ArrayList of counters. The main responsibility for this class is to hold
+the counters so that the classes such as the CountController and the
+ListviewAdapter class can access it to manipulate the counters or to
+view the counters.
+
+
+CounterController Class: One of the most important classes that 
+implements the CounterControllerInterface class which holds all 
+the methods to interact with the counters. The main responsibility 
+for this class is to create an interface where the other classes can 
+manipulate the counters in a CounterList. The methods include 
+creating, incrementing, deleting and reseting a counter, saving and 
+loading the counters, sorting the counters and also loading the 
+counter statistics to the stats_activity.
+
+
+MainActivity Class: The main acitivty class, this class holds
+the main page. The main responsibility of this class is create
+counters through the CounterControllerInterface and to load
+the counters into a view which is handled by the listview.
+
+
+ListviewAdapter Class: This view adapter class is used to
+load a custom row for the listview so that it can load a counter
+and its properties. It also loads buttons and text fields to edit
+the counters and manipulate them. The main responsibility
+of this class is to create a view for the counters and to send
+actions to the CountController to change the counters.
