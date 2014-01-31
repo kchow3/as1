@@ -14,7 +14,7 @@
         android:label="kchow3-Counter"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="es.softwareprocess.as1.MainActivity"
+            android:name="cs.ualberta.ca.as1.MainActivity"
             android:label="kchow3-Counter" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="es.softwareprocess.as1.StatsActivity"
+            android:name="cs.ualberta.ca.as1.StatsActivity"
             android:label="kchow3-Counter"
-            android:parentActivityName="es.softwareprocess.as1.MainActivity" >
+            android:parentActivityName="cs.ualberta.ca.as1.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="es.softwareprocess.as1.MainActivity" />
