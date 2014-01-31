@@ -4,8 +4,17 @@ import java.util.ArrayList;
 
 import android.content.Context;
 
-public interface CounterControllerInterface {
-
+/*
+ * CounterControllerInterface interface that the counter
+ * controller implements. Main responsiblity for the interface
+ * is to provide the methods that the controller can use to
+ * manipulate the counters.
+ * The design of this interface is so that in the future
+ * if there is another controller it can have the ability
+ * to implement a counter controller interface.
+ */
+public interface CounterControllerInterface 
+{
 	public void addCounter(Counter aCounter);
 	
 	public void deleteCounter(Counter aCounter);

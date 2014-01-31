@@ -31,35 +31,41 @@ public class CounterController implements CounterControllerInterface
 	private CounterList counterList;
 
 	//construct a controller and pass in a counter list
-	public CounterController(CounterList aCounterList) {
+	public CounterController(CounterList aCounterList) 
+	{
 		counterList = aCounterList;
 	}
 
 	//method to add a counter to the counter list
-	public void addCounter(Counter aCounter) {
+	public void addCounter(Counter aCounter) 
+	{
 		ArrayList<Counter> list = counterList.getCounterList();
 		list.add(aCounter);
 	}
 
 	//method to delete a counter from the counter list
-	public void deleteCounter(Counter aCounter) {
+	public void deleteCounter(Counter aCounter)
+	{
 		ArrayList<Counter> list = counterList.getCounterList();
 		list.remove(aCounter);
 	}
 
 	//method to rename a selected counter to the passed in name
-	public void renameCounter(Counter aCounter, String name) {
+	public void renameCounter(Counter aCounter, String name) 
+	{
 		aCounter.setName(name);
 	}
 
 	//method to increment a counter
-	public void incrementCount(Counter aCounter) {
+	public void incrementCount(Counter aCounter)
+	{
 		aCounter.increaseCount();
 
 	}
 
 	//method to reset a counter
-	public void resetCount(Counter aCounter) {
+	public void resetCount(Counter aCounter)
+	{
 		//sets count to 0 and clears time arraylist
 		aCounter.setCount(0);
 		aCounter.clearTime();
@@ -70,7 +76,8 @@ public class CounterController implements CounterControllerInterface
 	 * this method will write to file.sav the serialized
 	 * counter arraylist through a object output stream
 	 */
-	public void saveCounters(Context aContext){
+	public void saveCounters(Context aContext)
+	{
 		try 
 		{
 			//write to file.sav the serialized counter arraylist
@@ -92,7 +99,8 @@ public class CounterController implements CounterControllerInterface
 	 * contains the serialized counter arraylist object
 	 * through a object input stream
 	 */
-	public ArrayList<Counter> loadCounters(Context aContext) {
+	public ArrayList<Counter> loadCounters(Context aContext) 
+	{
 		try
 		{
 			//read from file.sav the serialized counter arraylist
