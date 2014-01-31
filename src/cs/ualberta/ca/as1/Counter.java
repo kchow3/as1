@@ -95,6 +95,7 @@ public class Counter implements Serializable
 		ArrayList<String> list = new ArrayList<String>();
 		String format = "";
 		int count = 0;
+		int hour = 0;
 
 		for(int i=0; i < time.size(); i++)
 		{
@@ -104,16 +105,18 @@ public class Counter implements Serializable
 			Calendar cal1 = time.get(i);
 			
 			//format for the output as a string
-			format = (new SimpleDateFormat("MMM d, HH:mm")).format(cal1.getTime());
+			format = (new SimpleDateFormat("MMM d, h:mmaa")).format(cal1.getTime());
+			
+			Calendar tempCal = (Calendar) cal1.clone();
+			hour = tempCal.get(Calendar.HOUR_OF_DAY);
+			tempCal.set(Calendar.HOUR_OF_DAY, hour+1);
 			
 			for(int j=i+1; j < time.size(); j++)
 			{
 				//get the next calendar object for comparison
 				Calendar cal2 = time.get(j);
 				//check if during the same hour
-				if( cal1.get(Calendar.YEAR ) == cal2.get(Calendar.YEAR) &&
-						cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR) &&
-						cal1.get(Calendar.HOUR_OF_DAY) == cal2.get(Calendar.HOUR_OF_DAY))
+				if(cal2.before(tempCal))
 				{
 					//increase the count
 					count++;
