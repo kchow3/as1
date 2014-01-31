@@ -3,8 +3,6 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import android.util.Log;
-
 /*
  * Counter Class for the counter objects
  * this object represents the counters and has attributes:
@@ -13,6 +11,9 @@ import android.util.Log;
  * can be saved into a serial form and loaded from.
  * This class is mainly called from the counter controller to
  * manipulate the properties of a counter object. 
+ * The design of this class is a counter object that can be stored
+ * in the counter list class and accessible through the 
+ * countercontroller interface.
  */
 public class Counter implements Serializable
 {
