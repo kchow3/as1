@@ -1,11 +1,11 @@
 Computer 301 Assignment 1
 Counter App
-
 ===
 This is a counter app for android that is able to add counters and manipulate
 with buttons such as incrementing, reseting, renaming and deleting counters.
 This app also prints out counter statistics for each of the counters aggregated
 by a time period.
+
 ===
 
 Copyright 2014 Kevin Chow
