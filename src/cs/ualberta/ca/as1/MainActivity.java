@@ -3,9 +3,6 @@ package cs.ualberta.ca.as1;
 import java.io.File;
 import java.util.ArrayList;
 
-import cs.ualberta.ca.R;
-
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +15,7 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity{
 	
-	 public final static String EXTRA_STATS = "es.softwareprocess.as1.stats";
+	 public final static String EXTRA_STATS = "cs.ualberta.ca.as1.stats";
 
 	private CounterList counterList;
 	private ListviewAdapter viewAdapter;

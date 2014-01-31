@@ -2,9 +2,6 @@ package cs.ualberta.ca.as1;
 
 import java.util.ArrayList;
 
-import cs.ualberta.ca.R;
-
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +12,7 @@ import android.widget.ListView;
 
 public class StatsActivity extends Activity {
 	
-	public final static String EXTRA_STATS = "es.softwareprocess.as1.stats";
+	public final static String EXTRA_STATS = "cs.ualberta.ca.as1.stats";
 	
 	ArrayAdapter<String> stringAdapter;
 	private ArrayList<String> statsList;
